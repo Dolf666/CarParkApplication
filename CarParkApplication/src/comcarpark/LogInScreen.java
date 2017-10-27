@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
@@ -35,7 +36,7 @@ public class LogInScreen extends JFrame{
 	 * Create the frame.
 	 */
 	public LogInScreen() {
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //will close all aplication
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //will close all application
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(800, 200, 600, 700);
@@ -76,17 +77,35 @@ public class LogInScreen extends JFrame{
 		btnSubmit.setBounds(205, 427, 89, 23);
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				try {
-					UserScreen frame = new UserScreen();
-					frame.setVisible(true);
-					setVisible(false);
-					//setEnabled(false);
-					System.out.println("tadaa");
+				
+			
+				
+					if (textPane.getText().equals("") || textPane_1.getText().equals("") ) {
+						JOptionPane.showMessageDialog(textPane, "Fields will not be blank");}
+					else {
+						
+						if(textPane.getText().equals(MainController.list.get(0).getName().trim())&&textPane_1.getText().equals(MainController.list.get(0).getPassword().trim())){
+							try {
+								UserScreen frame = new UserScreen();
+								frame.setVisible(true);
+								setVisible(false);
+								//setEnabled(false);
+								System.out.println("tadaa");
 
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							
+								}
+						else {
+						JOptionPane.showMessageDialog(textPane, "Incorrect credentials");
+						}
+						
+					}
+				
+				
+				
+			}//end of action performed
 		});
 		contentPane.add(btnSubmit);
 	}

@@ -2,20 +2,26 @@ package comcarpark;
 
 import java.util.Scanner;
 
+
 public abstract class User {
 	private String name;
 	private String surname;
 	private String phoneNumber;
 	private String emailAddress;
 	private String address;
+	private String password;
+	private String retypePassword;
 	
-	public User(String name,  String surname, String phoneNumber, String emailAddress,String address) {
+	public User(String name,  String surname, String phoneNumber, String emailAddress,String address, String password,
+	  String retypePassword) {
 		super();
 		this.name = name;
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
 		this.emailAddress = emailAddress;
 		this.address=address;
+		this.password=password;
+		this.retypePassword=retypePassword;
 	}
 
 	public String getName() {
@@ -112,11 +118,31 @@ public abstract class User {
 		}
 	 
 
-	@Override
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRetypePassword() {
+		return retypePassword;
+	}
+
+	public void setRetypePassword(String retypePassword) {
+		this.retypePassword = retypePassword;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	/*@Override
 	public String toString() {
 		
 		return "Account created for "+this.name+" "+this.surname+"number"+this.phoneNumber+"email"+this.emailAddress+" "+this.address;
 	}
-	
+	*/
 
 }

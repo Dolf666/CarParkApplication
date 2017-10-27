@@ -13,10 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
+import javax.swing.JPasswordField;
 
 public class Register extends JFrame {
 	
 	private JPanel contentPane;
+	private JPasswordField passwordField;
+	private JPasswordField passwordField_1;
 
 	/**
 	 * Launch the application.
@@ -160,6 +163,21 @@ public class Register extends JFrame {
 		lblPleasePressUpdate.setBounds(15, 603, 304, 20);
 		contentPane.add(lblPleasePressUpdate);
 		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(304, 326, 176, 26);
+		contentPane.add(passwordField);
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(304, 404, 176, 26);
+		contentPane.add(passwordField_1);
+		
+		JLabel lblEnterPassword = new JLabel("Type Password");
+		lblEnterPassword.setBounds(304, 296, 120, 14);
+		contentPane.add(lblEnterPassword);
+		
+		JLabel lblRetypePassword = new JLabel("Retype Password");
+		lblRetypePassword.setBounds(301, 371, 92, 17);
+		contentPane.add(lblRetypePassword);
+		
 	}
-
 }
