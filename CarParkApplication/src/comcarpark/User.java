@@ -11,6 +11,7 @@ public abstract class User {
 	private String address;
 	private String password;
 	private String retypePassword;
+	private String passwordCode;
 	
 	public User(String name,  String surname, String phoneNumber, String emailAddress,String address, String password,
 	  String retypePassword) {
@@ -117,6 +118,14 @@ public abstract class User {
 			return address;
 		}
 	 
+
+	public String getPasswordCode() {
+		return passwordCode;
+	}
+
+	public void setPasswordCode(String passwordCode) {
+		this.passwordCode = passwordCode;
+	}
 
 	public String getPassword() {
 		return password;

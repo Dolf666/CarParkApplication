@@ -65,9 +65,18 @@ public class LogInScreen extends JFrame{
 		textPane_1.setBounds(204, 373, 102, 26);
 		contentPane.add(textPane_1);
 		
-		JButton btnNewButton = new JButton("Forgotten credentials?");
+		JButton btnNewButton = new JButton("Forgotten credentials?");//ResetCredentialsScreen
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				try {
+					ResetCredentialsScreen frame1 = new ResetCredentialsScreen();
+					frame1.setVisible(true);
+					setVisible(false);
+				
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		});
 		btnNewButton.setBounds(150, 509, 188, 29);
@@ -89,8 +98,7 @@ public class LogInScreen extends JFrame{
 								UserScreen frame = new UserScreen();
 								frame.setVisible(true);
 								setVisible(false);
-								//setEnabled(false);
-								System.out.println("tadaa");
+								
 
 							} catch (Exception e) {
 								e.printStackTrace();
