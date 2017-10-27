@@ -18,7 +18,7 @@ public class MainController {
 		list.add(o3);
 		list.add(o4);
 		list.add(o5);
-		//EventQueue.invokeLater(new Runnable() {/////tttttt
+		//EventQueue.invokeLater(new Runnable() {/////ttttttrtrtrtr
 			//public void run() {
 				try {
 					MainScreen frame = new MainScreen();
